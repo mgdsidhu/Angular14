@@ -2,6 +2,8 @@
 
 # Angular 14 Project with MEAN Stack and NGRX Store
 
+> **Note**: This is a test change to verify repository access and PR creation workflow.
+
 This Angular 14 project with MEAN Stack and NGRX Store is an example of a complete web application with a modern and scalable architecture. It uses popular technologies and libraries for web application development, both on the front-end and back-end.
 
 - [Readme file in spanish](README-es.md)
