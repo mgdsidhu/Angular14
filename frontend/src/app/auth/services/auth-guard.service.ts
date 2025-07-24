@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, } from '@angular/router';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subject, takeUntil, tap } from 'rxjs';
 import { AppState } from '../authStore/app.state';
@@ -8,7 +8,7 @@ import { selectIsAuthenticatedState } from '../authStore/selectors/auth.selector
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate {
+export class AuthGuardService  {
 
   public isLogged$ = this.store.select(selectIsAuthenticatedState);
 
