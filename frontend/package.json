@@ -21,9 +21,9 @@
     "@ngrx/effects": "^18.1.1",
     "@ngrx/store": "^18.1.1",
     "animate.css": "^4.1.1",
-    "primeflex": "^3.3.0",
-    "primeicons": "^6.0.1",
-    "primeng": "^13.4.1",
+    "primeflex": "^3.3.1",
+    "primeicons": "^7.0.0",
+    "primeng": "^17.18.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
