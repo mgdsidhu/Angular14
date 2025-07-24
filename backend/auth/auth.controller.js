@@ -1,7 +1,7 @@
 const User = require('./auth.dao');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const properties = require('./config/properties');
+const properties = require('../config/properties');
 
 exports.registerUser = (req, res, next) => {
     

@@ -19,14 +19,14 @@ export const initialState: AuthState = {
 export const authReducer = createReducer(
   //Supply the initial state
   initialState,
-  on(login, (state, { email, password }) => ({ ...state, status: 'loading' })),
-  on(register, (state, { email, username, password }) => ({ ...state, status: 'loading' })),
+  on(login, (state, { email, password }) => ({ ...state, status: 'loading' as const })),
+  on(register, (state, { email, username, password }) => ({ ...state, status: 'loading' as const })),
   on(loginSuccess, (state, { username, email, token, expiresIn, isLogged }) =>
   ({
     ...state,
     isAuthenticated: true,
     user: { email: email, username: username, token: token, expiresIn: expiresIn, isLogged: isLogged },
-    status: 'success'
+    status: 'success' as const
   })
   ),
   on(registerSuccess, (state, { username, email, accessToken, expiresIn, isLogged }) =>
@@ -34,7 +34,7 @@ export const authReducer = createReducer(
     ...state,
     isAuthenticated: true,
     user: { email: email, username: username, token: accessToken, expiresIn: expiresIn, isLogged: isLogged },
-    status: 'success'
+    status: 'success' as const
   })
   ),
   on(loginFailure, (state, { error }) =>
@@ -43,7 +43,7 @@ export const authReducer = createReducer(
     isAuthenticated: false,
     user: null,
     error: error,
-    status: 'error'
+    status: 'error' as const
   })
   ),
   on(registerFailure, (state, { error }) =>
@@ -52,13 +52,13 @@ export const authReducer = createReducer(
     isAuthenticated: false,
     user: null,
     error: error,
-    status: 'error'
+    status: 'error' as const
   })
   ),
   on(logOut, (state, { accessToken, email }) =>
   ({
     ...state,
-    status: 'loading'
+    status: 'loading' as const
   })
   ),
   on(logOutSuccess, (state, { message }) =>
@@ -67,14 +67,14 @@ export const authReducer = createReducer(
     isAuthenticated: false,
     user: null,
     error: null,
-    status: 'success'
+    status: 'success' as const
   })
   ),
   on(logOutFaliure, (state, { error }) =>
   ({
     ...state,
     error: error,
-    status: 'error'
+    status: 'error' as const
   })
   ),
   on(setStoreData, (state, { username, email, token, expiresIn, isLogged }) =>
@@ -82,7 +82,7 @@ export const authReducer = createReducer(
     ...state,
     isAuthenticated: true,
     user: { email: email, username: username, token: token, expiresIn: expiresIn, isLogged: isLogged },
-    status: 'success'
+    status: 'success' as const
   })
   ),
 )

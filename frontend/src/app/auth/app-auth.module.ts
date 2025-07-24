@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -20,24 +20,18 @@ import { MessageModule } from 'primeng/message';
 
 import { FormsModule } from '@angular/forms';
 
-@NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-    RegisterFormErrorsComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule,
-    InputTextModule,
-    PasswordModule,
-    CheckboxModule,
-    FormsModule,
-    ButtonModule,
-    MessagesModule,
-    MessageModule,
-    HttpClientModule
-  ]
-})
+@NgModule({ declarations: [
+        LoginComponent,
+        RegisterComponent,
+        RegisterFormErrorsComponent
+    ], imports: [CommonModule,
+        RouterModule,
+        ReactiveFormsModule,
+        InputTextModule,
+        PasswordModule,
+        CheckboxModule,
+        FormsModule,
+        ButtonModule,
+        MessagesModule,
+        MessageModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppAuthModule {}

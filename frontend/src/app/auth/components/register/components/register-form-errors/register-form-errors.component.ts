@@ -11,7 +11,7 @@ import { registerFormInterface } from 'src/app/auth/models/forms.model';
   >
     <p class="mt-2 " *ngIf="registerForm?.controls?.username?.errors?.['pattern']" >Incorrect username format</p>
     <p class="mt-2 " *ngIf="registerForm?.controls?.username?.errors?.['required']"  >Username required</p>
-    <p class="mt-2 " *ngIf="registerForm?.controls?.email?.errors?.['pattern']"  >Incorrect email format, please use: email@email.com</p>
+    <p class="mt-2 " *ngIf="registerForm?.controls?.email?.errors?.['pattern']"  >Incorrect email format, please use: email&#64;email.com</p>
     <p class="mt-2 " *ngIf="registerForm?.controls?.email?.errors?.['required']"  >Email required</p>
     <p class="mt-2 " *ngIf="registerForm?.controls?.password?.errors?.['pattern']"  >Incorrect password format</p>
     <p class="mt-2 " *ngIf="registerForm?.controls?.password?.errors?.['required']"  >Password required</p>
